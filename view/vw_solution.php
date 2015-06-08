@@ -5,9 +5,9 @@
  */
 ?>
 <strong>
-    Статистика. Всего расчетов: <?=$statisticTotal;?><br>
-    Действительных решений :<?=$statisticReal;?>&nbsp;&nbsp;
-    Комплексных решений :<span style="background-color:yellowgreen"><?=$statisticImage;?> </span>
+    Статистика. Всего расчетов: <?=$statistic['total'];?><br>
+    Действительных решений :<?=$statistic['real'];?>&nbsp;&nbsp;
+    Комплексных решений :<span style="background-color:yellowgreen"><?=$statistic['image'];?> </span>
 </strong>
 <table border="4"
        cellspacing="1"

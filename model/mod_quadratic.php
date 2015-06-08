@@ -19,15 +19,16 @@ class mod_quadratic {
     private $solution = [] ; // решение
     private $D ;           // дескриминант
     private $error = false ;
-
+    private $EPSILON ;     // малая величина, принимаемая за 0
     //---------------------------------------//
     public function __construction() {
+        $this->EPSILON  = TaskStore::EPSILON ;     // малая величина, принимаемая за 0
     }
     public function setCoefficients($A,$B,$C) {
         $this->a = (float) $A ;
         $this->b = (float) $B ;
         $this->c = (float) $C ;
-        if (abs($this->a) < TaskStore::EPSILON) {
+        if (abs($this->a) < $this->EPSILON) {
             $this->error = true ;
             return false ;
         }
@@ -42,7 +43,7 @@ class mod_quadratic {
     }
 
         public function calculate() {
-        $epsilon = TaskStore::EPSILON ;
+        $epsilon = $this->EPSILON ;
         $x1 = 0;
         $x2 = 0;
         $x1_i = 0 ;
